@@ -30,7 +30,8 @@ class Member:
         self.borrowed_books.remove(book)
         book.return_book()
 class Library:
-   
+    books=[]
+    members=[]
    
     def __init__(self) :
          books=[]
@@ -52,6 +53,24 @@ class Library:
                     if book.isbn == isbn:
                         member.return_book(book)
 
+book1 = Book("1984", "جورج اورول", "1234567890")
+book2 = Book("کشتن مرغ مقلد", "هارپر لی", "0987654321")
+
+# ایجاد کتابخانه و اضافه کردن کتاب‌ها
+library = Library()
+library.add_book(book1)
+library.add_book(book2)
+
+# ثبت یک عضو
+member = Member("آلیس", "M001")
+library.register_member(member)
+
+# امانت دادن کتاب به عضو
+library.issue_book("M001", "1234567890")
+
+# بازگرداندن کتاب
+library.return_book("M001", "1234567890")
+#https://github.com/FatemehHosseini2024/library_management_system
 
 
 
